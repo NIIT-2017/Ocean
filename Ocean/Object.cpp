@@ -1,9 +1,24 @@
 #include "Object.h"
 #include <cstdlib>
 
+unsigned int Object::count = 0;
+unsigned int Object::getCount()
+{
+	return count;
+}
+unsigned int* Object::getAddress()
+{
+	return &count;
+}
+
 Object::Object(Cell * c) :cell(c)
 {
 	name = rand() % ('Z' - 'A' + 1) + 'A';
+	count++;
+}
+Object::~Object()
+{
+	count--;
 }
 
 void Object::setCell(Cell* c)

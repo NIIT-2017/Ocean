@@ -8,6 +8,7 @@ class Ocean;
 
 class Cell
 {
+	friend Ocean;
 private:
 	Pair crd;
 	Object *obj;

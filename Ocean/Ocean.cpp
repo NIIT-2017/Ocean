@@ -12,6 +12,16 @@ Ocean::Ocean()
 			cells[i][j].init(Pair{ j, i }, this);
 	}
 }
+
+Ocean::~Ocean()
+{
+	for (size_t i = 0; i < N; i++)
+		delete[] cells[i];
+	delete[] cells;
+	for (auto item = stuff.begin(); item != stuff.end(); ++item)
+		delete *item;
+}
+
 void Ocean::print() const
 {
 	for (size_t i = 0; i < N; i++)

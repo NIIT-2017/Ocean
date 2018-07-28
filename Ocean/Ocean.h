@@ -7,12 +7,14 @@
 
 class Ocean
 {
+	
 private:
 	Cell **cells;
 	std::list<Object*> stuff;
 
 public:
 	Ocean();
+	~Ocean();
 	void print() const;
 	void addObjects(int);
 };
