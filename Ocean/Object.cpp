@@ -6,14 +6,11 @@ unsigned int Object::getCount()
 {
 	return count;
 }
-unsigned int* Object::getAddress()
-{
-	return &count;
-}
+
 
 Object::Object(Cell * c) :cell(c)
 {
-	name = rand() % ('Z' - 'A' + 1) + 'A';
+	//name = rand() % ('Z' - 'A' + 1) + 'A';
 	count++;
 }
 Object::~Object()
@@ -26,7 +23,7 @@ void Object::setCell(Cell* c)
 	cell = c;
 }
 
-char Object::getName() const
+char Object::getName()
 {
 	return name;
 }

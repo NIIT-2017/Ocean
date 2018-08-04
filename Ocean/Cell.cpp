@@ -13,3 +13,12 @@ void Cell::setObject(Object *obj)
 {
 	this->obj = obj;
 }
+
+void Cell::killMe()
+{
+	if (obj)
+	{
+		delete obj;
+		obj = nullptr;
+	}
+}

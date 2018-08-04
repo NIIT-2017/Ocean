@@ -17,6 +17,7 @@ public:
 	~Ocean();
 	void print() const;
 	void addObjects(int);
+	void run();
 };
 
 

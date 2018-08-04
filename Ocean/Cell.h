@@ -21,6 +21,7 @@ public:
 	void init(Pair p, Ocean* oc);
 	Object* getObject() const;
 	void setObject(Object*);
+	void killMe();
 
 };
 

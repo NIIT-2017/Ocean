@@ -1,6 +1,8 @@
 #include "Ocean.h"
+#include "Stone.h"
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 
 Ocean::Ocean()
 {
@@ -44,10 +46,24 @@ void Ocean::addObjects(int count)
 			continue;
 		else
 		{
-			Object *born = new Object(&cells[y][x]);
+			Object *born = new Stone(&cells[y][x]);
 			cells[y][x].setObject(born);
 			stuff.push_back(born);
 			count--;
 		}
+	}
+}
+
+
+void Ocean::run()
+{
+	while (1)
+	{
+		for (auto obj : stuff)
+			obj->live();
+		clock_t now = clock();
+		while (clock() < now + CLOCKS_PER_SEC);
+		system("cls");
+		print();
 	}
 }
